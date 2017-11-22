@@ -13,6 +13,20 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/SAMPLE/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/hrdb/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -96,6 +110,8 @@
                         </goals>
                         <configuration>
                             <sources>
+                                <source>services/SAMPLE/src</source>
+                                <source>services/hrdb/src</source>
                                 <source>services/securityService/src</source>
                             </sources>
                         </configuration>
@@ -264,6 +280,23 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4.1208.jre7</version>
+        </dependency>
+        <dependency>
+            <groupId>db2jcc4__1___1_</groupId>
+            <artifactId>db2jcc4__1___1_</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/db2jcc4__1___1_.jar</systemPath>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -294,6 +327,6 @@
         <profile.props.file>development.properties</profile.props.file>
         <spring.version>4.3.9.RELEASE</spring.version>
         <spring.security.version>4.1.2.RELEASE</spring.security.version>
-        <wavemaker.studio.version>9.0.0.3661</wavemaker.studio.version>
+        <wavemaker.studio.version>9.0.2.3867</wavemaker.studio.version>
     </properties>
 </project>

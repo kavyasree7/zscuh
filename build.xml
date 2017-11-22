@@ -29,6 +29,14 @@
             <regexp pattern="//.*.cloudfront.net/studio-app/.*.*.*.*/wmapp"/>
             <substitution expression="_cdnUrl_/wmapp"/>
         </replaceregexp>
+        <replaceregexp file="src/main/webapp/index.html" byline="true">
+            <regexp pattern="/studio/_static_/*.*.*.*/wmmobile"/>
+            <substitution expression="_cdnUrl_/wmmobile"/>
+        </replaceregexp>
+        <replaceregexp file="src/main/webapp/index.html" byline="true">
+            <regexp pattern="//.*.cloudfront.net/studio-app/.*.*.*.*/wmmobile"/>
+            <substitution expression="_cdnUrl_/wmmobile"/>
+        </replaceregexp>
     </target>
 
     <target name="init" depends="copy-libs-jar,copy-wm-project-properties,cdnUrl-replace"></target>
